@@ -1,1 +1,1 @@
-# myWordPress
+# mywordpress
