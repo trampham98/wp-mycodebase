@@ -18,6 +18,7 @@ function masterWidgetsInit() {
 }
 
 // Extras functions
+require('inc/enqueue.php');
 require('inc/extras.php');
 require('inc/elementor-widgets.php');
 require('inc/shortcodes.php');
