@@ -1,0 +1,17 @@
+/**
+ * $primary-color: var(--primary-color);
+ * :root { --primary-font: #000000; }
+ */
+:root {
+  font-size: 100%;
+}
+@media only screen and (max-width: 575px) {
+  :root {
+    font-size: 50%;
+  }
+}
+:root body {
+  font-size: 16px;
+  background-color: rebeccapurple;
+}
+/*# sourceMappingURL=theme.css.map */

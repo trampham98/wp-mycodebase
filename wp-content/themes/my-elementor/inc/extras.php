@@ -28,3 +28,10 @@ function get_image_alt($image, $default = "DNeX") {
 
   return $default;
 }
+
+add_filter('upload_mimes', 'maddie_custom_mime_types');
+function maddie_custom_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  $mimes['svgz'] = 'image/svg+xml';
+  return $mimes;
+}

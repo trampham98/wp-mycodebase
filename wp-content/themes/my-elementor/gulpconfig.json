@@ -1,0 +1,15 @@
+{
+    "localhost": {
+        "proxy": "mydemo.local"
+    },
+    "vendorCSS": [
+        "./assets/vendors/css/slick-theme.css", 
+        "./assets/vendors/css/slick.css", 
+        "./assets/vendors/css/fancybox.css"
+    ],
+    "vendorJS": [
+        "./assets/vendors/js/jquery-ui.js", 
+        "./assets/vendors/js/slick.min.js", 
+        "./assets/vendors/js/fancybox.umd.js"
+    ]
+  }

@@ -1,0 +1,11 @@
+:root {
+  font-size: 100%;
+  @include breakpoint(575) {
+    font-size: 50%;
+  }
+
+  body {
+    font-size: 16px;
+    background-color: rebeccapurple;
+  }
+}
