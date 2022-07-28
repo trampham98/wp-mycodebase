@@ -59,8 +59,25 @@ gulp.task( 'watch-bs', function() {
 });
 
 // watch
+// gulp.task( 'watch', function() {
+//   gulp.watch(['./assets/scss/**/*.scss', './elementor-widgets/**/*.scss'], stylesheet);
+// });
+
+function widget_stylesheet() {
+  return gulp
+    .src('./elementor-widgets/**/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(autoprefixer('last 2 versions'))
+    // .pipe(cleanCSS())
+    // .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./elementor-widgets'));
+}
+
+// watch
 gulp.task( 'watch', function() {
-  gulp.watch(['./assets/scss/**/*.scss', './elementor-widgets/**/*.scss'], stylesheet);
+  gulp.watch(['./assets/scss/**/*.scss'], stylesheet);
+  gulp.watch(['./elementor-widgets/**/*.scss'], widget_stylesheet);
 });
 
 exports.style = stylesheet;

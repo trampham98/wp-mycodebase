@@ -10,20 +10,38 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Update URI:        https://example.com/my-plugin/
  * Text Domain:       maddie-elementor-addon
- * Domain Path:       /languages
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-// Array of files to include.
-$maddie_includes = array(
-	'posttypes.php',
-	'functions.php',
-);
+add_action('plugins_loaded', 'maddie_elementor_addon');
+function maddie_elementor_addon() {
+	if (!did_action('elementor/loaded')) {
+		add_action('admin_notices', 'admin_notice_missing_elementor_plugin');
+		return false;
+	}
 
-// Include files.
-foreach ($maddie_includes as $file) {
-  require_once(__DIR__.'/includes/'.$file);
+	$maddie_includes = array(
+		'posttypes.php',
+		'widgets.php',
+		'functions.php',
+	);
+	foreach ($maddie_includes as $file) {
+		require_once(__DIR__ . '/includes/' . $file);
+	}
+}
+
+function admin_notice_missing_elementor_plugin() {
+	if (isset($_GET['activate'])) 
+		unset($_GET['activate']);
+
+	$message = sprintf(
+		esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'maddie-elementor-addon'),
+		'<strong>' . esc_html__('Maddie Elementor Addon', 'maddie-elementor-addon') . '</strong>',
+		'<strong>' . esc_html__('Elementor', 'maddie-elementor-addon') . '</strong>'
+	);
+
+	printf('<div class="notice notice-error"><p>%1$s</p></div>', $message);
 }
