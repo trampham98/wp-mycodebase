@@ -1,1 +1,0 @@
-{"version":3,"sources":["common.scss","common.css"],"names":[],"mappings":"AAEA;EACE,qBAHQ;ACEV","file":"common.css","sourcesContent":["$primary: red;\r\n\r\nbody {\r\n  background-color: $primary;\r\n}","body {\n  background-color: red;\n}"]}

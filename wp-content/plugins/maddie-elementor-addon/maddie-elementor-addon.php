@@ -24,6 +24,7 @@ function maddie_elementor_addon() {
 	}
 
 	$maddie_includes = array(
+		'enqueue.php',
 		'posttypes.php',
 		'widgets.php',
 		'functions.php',
