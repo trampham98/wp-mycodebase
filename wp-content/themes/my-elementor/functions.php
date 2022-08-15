@@ -2,24 +2,20 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-require('inc/config.php');
+$maddie_inc_dir = 'inc/';
+$maddie_includes = array(
+	'enqueue.php',
+	'menus.php',
+	'posttypes.php',
+	'taxonomies.php',
+	'widgets.php',
+	'elementor-widgets.php',
+	'functions.php',
+	'ajax.php',
+	'shortcodes.php',
+);
 
-add_action('init', 'masterInit');
-function masterInit() {
-	require('inc/posttypes.php');
-	require('inc/taxonomies.php');
-	require('inc/menus.php');
-	require('inc/acf.php');
+// Include files.
+foreach ($maddie_includes as $file) {
+	require_once get_theme_file_path( $maddie_inc_dir . $file );
 }
-
-add_action('widgets_init', 'masterWidgetsInit');
-function masterWidgetsInit() {
-	require('inc/widgets.php');
-}
-
-// Extras functions
-require('inc/enqueue.php');
-require('inc/extras.php');
-require('inc/elementor-widgets.php');
-require('inc/shortcodes.php');
-require('inc/ajax.php');
