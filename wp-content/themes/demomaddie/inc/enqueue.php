@@ -6,8 +6,8 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-add_action('wp_enqueue_scripts', 'maddie_enqueue_scripts');
-function maddie_enqueue_scripts() {
+add_action('wp_enqueue_scripts', 'demomaddie_enqueue_scripts');
+function demomaddie_enqueue_scripts() {
 
   $stylesheet_uri = get_stylesheet_directory_uri();
 
@@ -30,8 +30,8 @@ function maddie_enqueue_scripts() {
   );
 }
 
-add_action('admin_enqueue_scripts', 'maddie_enqueue_scripts_admin');
-function maddie_enqueue_scripts_admin() {
+add_action('admin_enqueue_scripts', 'demomaddie_enqueue_scripts_admin');
+function demomaddie_enqueue_scripts_admin() {
   // wp_register_style('custom_wp_admin_css', get_stylesheet_directory_uri() . '/assets/css/editor.css', array());
   // wp_enqueue_style('custom_wp_admin_css');
 }

@@ -29,8 +29,8 @@ function get_image_alt($image, $default = "default") {
   return $default;
 }
 
-add_filter('upload_mimes', 'maddie_custom_mime_types');
-function maddie_custom_mime_types($mimes) {
+add_filter('upload_mimes', 'demomaddie_custom_mime_types');
+function demomaddie_custom_mime_types($mimes) {
   $mimes['svg'] = 'image/svg+xml';
   $mimes['svgz'] = 'image/svg+xml';
   return $mimes;

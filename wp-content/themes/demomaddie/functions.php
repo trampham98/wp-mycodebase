@@ -2,8 +2,8 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-$maddie_inc_dir = 'inc/';
-$maddie_includes = array(
+$demomaddie_inc_dir = 'inc/';
+$demomaddie_includes = array(
 	'enqueue.php',
 	'menus.php',
 	'posttypes.php',
@@ -16,6 +16,6 @@ $maddie_includes = array(
 );
 
 // Include files.
-foreach ($maddie_includes as $file) {
-	require_once get_theme_file_path( $maddie_inc_dir . $file );
+foreach ($demomaddie_includes as $file) {
+	require_once get_theme_file_path( $demomaddie_inc_dir . $file );
 }
