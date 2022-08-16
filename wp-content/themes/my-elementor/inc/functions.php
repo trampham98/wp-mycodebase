@@ -2,7 +2,7 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-function get_image_alt($image, $default = "DNeX") {
+function get_image_alt($image, $default = "default") {
   $image_id = '';
 
   if (is_array($image)) {

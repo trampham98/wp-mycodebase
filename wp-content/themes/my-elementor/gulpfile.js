@@ -7,11 +7,6 @@ var concat       = require('gulp-concat');
 var minify       = require('gulp-minify');
 var browserSync  = require('browser-sync').create();
 
-var config       = require( './gulpconfig.json' );
-var vendorCSS    = config.vendorCSS;
-var vendorJS     = config.vendorJS;
-var localhost    = config.localhost;
-
 function stylesheet() {
   return gulp
     .src('./assets/scss/**/*.scss')
@@ -58,11 +53,18 @@ gulp.task( 'watch', function() {
 });
 
 // watch browserSync
-// gulp.task( 'watch-bs', function() {
-//   browserSync.init(localhost);
-//   gulp.watch(['./assets/scss/**/*.scss', './elementor-widgets/**/*.scss'], stylesheet);
-//   gulp.watch('./**/*.php').on('change', browserSync.reload);
-//   gulp.watch('./assets/css/*.css').on('change', browserSync.reload);
-// });
+gulp.task( 'watch-bs', function() {
+  browserSync.init({
+    "proxy": "mywordpress.local"
+  });
+  gulp.watch(['./assets/scss/**/*.scss', './elementor-widgets/**/*.scss'], stylesheet);
+  gulp.watch(['./assets/scss/**/*.scss', './elementor-widgets/**/*.scss'], widget_stylesheet);
+  gulp.watch(['./assets/scss/**/*.scss', './elementor-widgets/**/*.scss'], minify_vendors_style);
+  gulp.watch(['./assets/scss/**/*.scss', './elementor-widgets/**/*.scss'], minify_vendors_script);
+
+  gulp.watch('./**/*.php').on('change', browserSync.reload);
+  gulp.watch('./assets/css/*.css').on('change', browserSync.reload);
+  gulp.watch('./elementor-widgets/**/*.css').on('change', browserSync.reload);
+});
 
 exports.style = stylesheet;

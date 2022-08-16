@@ -16,6 +16,7 @@ wp-content/themes/twenty*/
 
 # ignore node dependency directories
 node_modules/
+elementor-dynamic-listing/
 
 # ignore config.php
 wp-config.php
