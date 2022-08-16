@@ -13,10 +13,10 @@ function maddie_enqueue_scripts() {
 
   wp_enqueue_style('hello-elementor', get_template_directory_uri() . '/style.css', array());
 
-  // wp_enqueue_style('vendors-style', $stylesheet_uri.'/assets/css/vendors.css', array());
+  wp_enqueue_style('vendors-style', $stylesheet_uri.'/assets/css/vendors.css', array());
   wp_enqueue_style('main-style', $stylesheet_uri.'/assets/css/theme.css', array());
 
-  // wp_enqueue_script('vendors-script', $stylesheet_uri.'/assets/js/vendors.js', array('jquery'), true);
+  wp_enqueue_script('vendors-script', $stylesheet_uri.'/assets/js/vendors.js', array('jquery'), true);
   wp_enqueue_script('main-script', $stylesheet_uri.'/assets/js/main.js', array('jquery'), true);
 
   // frontend ajax requests.
