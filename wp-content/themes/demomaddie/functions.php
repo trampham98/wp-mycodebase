@@ -2,7 +2,7 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-$demomaddie_inc_dir = 'inc/';
+$demomaddie_inc_dir  = 'inc/';
 $demomaddie_includes = array(
 	'enqueue.php',
 	'menus.php',
@@ -15,7 +15,6 @@ $demomaddie_includes = array(
 	'shortcodes.php',
 );
 
-// Include files.
 foreach ($demomaddie_includes as $file) {
-	require_once get_theme_file_path( $demomaddie_inc_dir . $file );
+	require_once get_theme_file_path($demomaddie_inc_dir.$file);
 }

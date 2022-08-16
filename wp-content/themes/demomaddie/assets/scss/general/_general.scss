@@ -1,3 +1,26 @@
-body {
-  font-size: 18px;
+:root {
+  --vh: 100vh;
+  font-size: 100%;
+
+  @include breakpoint(1199) {
+    font-size: 95%;
+  }
+
+  @include breakpoint(991) {
+    font-size: 70%;
+  }
+
+  @include breakpoint(767) {
+    font-size: 65%;
+  }
+  
+  @include breakpoint(575) {
+    font-size: 60%;
+  }
+
+  body{
+    @include fs-16;
+    font-weight: 400;
+    color: $body-color;
+  }
 }

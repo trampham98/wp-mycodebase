@@ -1,0 +1,46 @@
+@mixin fs($size, $line-height) {
+  @include rem('font-size', $size);
+  @include rem('line-height', $line-height);
+}
+
+@mixin h1 {
+  @include fs(80, 90);
+  @include breakpoint(575){
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+@mixin h2 {
+  @include fs(40, 60);
+  @include breakpoint(575){
+    font-size: 21px;
+    line-height: 30px;
+  }
+}
+
+@mixin fs-14 {
+  font-size: 14px;
+  line-height: 24px;
+  @include breakpoint(575){
+    font-size: 12px;
+    line-height: 22px;
+  }
+}
+
+@mixin fs-16 {
+  font-size: 16px;
+  line-height: 28px;
+  @include breakpoint(575){
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+// @mixin mt-1x {
+//   @include rem('margin-top', $spacing-1x);
+// }
+// @mixin mx-1x {
+//   @include mt-1x;
+//   @include mb-1x;
+// }

@@ -35,3 +35,10 @@ function demomaddie_custom_mime_types($mimes) {
   $mimes['svgz'] = 'image/svg+xml';
   return $mimes;
 }
+
+// add_action( 'wp_footer', 'your_function' );
+function your_function() {
+  ?>
+  <h1>Just another WordPress site</h1>
+  <?php
+}

@@ -2,7 +2,40 @@
  * $primary-color: var(--primary-color);
  * :root { --primary-font: #000000; }
  */
-body {
-  font-size: 18px;
+:root {
+  --vh: 100vh;
+  font-size: 100%;
+}
+@media only screen and (max-width: 1199px) {
+  :root {
+    font-size: 95%;
+  }
+}
+@media only screen and (max-width: 991px) {
+  :root {
+    font-size: 70%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  :root {
+    font-size: 65%;
+  }
+}
+@media only screen and (max-width: 575px) {
+  :root {
+    font-size: 60%;
+  }
+}
+:root body {
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #000000;
+}
+@media only screen and (max-width: 575px) {
+  :root body {
+    font-size: 14px;
+    line-height: 24px;
+  }
 }
 /*# sourceMappingURL=theme.css.map */
