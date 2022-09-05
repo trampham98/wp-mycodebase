@@ -16,10 +16,6 @@ function demomaddie_add_elementor_widget_categories($elements_manager) {
 add_action('elementor/widgets/register', 'demomaddie_register_elementor_widgets');
 function demomaddie_register_elementor_widgets($widgets_manager) {
   $stylesheet_url = get_stylesheet_directory();
-
-	require_once($stylesheet_url.'/elementor-widgets/demomaddie-slider/demomaddie-slider.php');
 	require_once($stylesheet_url.'/elementor-widgets/demomaddie-posts/demomaddie-posts.php');
-
-	$widgets_manager->register(new \Elementor_DemoMaddie_Slider_Widget());
 	$widgets_manager->register(new \Elementor_DemoMaddie_Posts_Widget());
 }
