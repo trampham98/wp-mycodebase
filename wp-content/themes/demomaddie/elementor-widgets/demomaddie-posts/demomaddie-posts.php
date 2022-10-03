@@ -273,10 +273,6 @@ class Elementor_DemoMaddie_Posts_Widget extends \Elementor\Widget_Base {
 			'desktop_default' => 'maddie-columns-4',
 			'tablet_default'  => 'maddie-columns-2',
 			'mobile_default'  => 'maddie-columns-1',
-			// 'selectors' => [
-			// 	'{{WRAPPER}} .widget-image' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-			// ],
-			// 'prefix_class' => 'content-align-%s',
 		]);
 
 		$this->add_control('ctrl_show_cta', [
@@ -525,7 +521,8 @@ class Elementor_DemoMaddie_Posts_Widget extends \Elementor\Widget_Base {
 		
 		$classes = array(
 			'maddie-posts-widget', 
-			'maddie-widget-'.$widget_id
+			'maddie-widget-'.$widget_id,
+			'maddie-layout-'.$widget_layout,
 		);
 
 		switch ($post_type) {
